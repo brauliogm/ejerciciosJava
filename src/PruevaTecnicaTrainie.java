@@ -78,7 +78,7 @@ public class PruevaTecnicaTrainie {
             System.out.print(k + " ");
         }
 
-        System.out.println(" ");
+        System.out.println("");
         for (int i = 0; i < teatro.length; i++) {
             System.out.print(0 + (i) +" ");
             for (int j = 0; j < teatro.length; j++) {
@@ -86,10 +86,8 @@ public class PruevaTecnicaTrainie {
                     teatro[i][j] ="L";
                 }
                 System.out.print(teatro[i][j] + " ");
-                if ( j == 9){
-                    System.out.println(" ");
-                }
             }
+            System.out.println("");
         }
     }
 }

@@ -38,6 +38,8 @@ public class StairsClimb {
     public static long stairsIn20(int[][] stairs)
     {
         //code here
+        long num = 1;
+        return num;
     }
 
    public void stairsIn20_BasicTest1() {

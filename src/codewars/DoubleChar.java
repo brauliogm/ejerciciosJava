@@ -10,7 +10,18 @@ public class DoubleChar {
     * "1234!_ "     -> "11223344!!__  "
      */
 
+    public static void main(String[] args) {
+        String s = "hola!";
+
+        System.out.println(doubleChar(s));
+    }
+
     public static String doubleChar(String s){
-        //enter your code here
+        String resultado = "";
+        for (int i = 0; i < s.length(); i++) {
+            resultado += "" + s.charAt(i) + s.charAt(i);
+            //System.out.println("" + s.charAt(i) + s.charAt(i));
+        }
+        return resultado;
     }
 }

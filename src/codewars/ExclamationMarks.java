@@ -18,9 +18,26 @@ public class ExclamationMarks {
     remove("!!!Hi !!hi!!! !hi",100) === "Hi hi hi"
      */
 
-    public static String remove(String s, int n){
+    public static void main(String[] args) {
+        String cadena = "!!!Hi !!hi!!! !hi";
 
-        return s;
-
+        System.out.println(remove(cadena,3));
     }
+
+    public static String remove(String s, int n){
+        String resultado = "";
+        int contador = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '!' && contador < n) {
+                resultado += "";
+                contador++;
+            } else {
+                resultado += s.charAt(i);
+            }
+        }
+
+        return resultado;
+    }
+    //Listones
 }

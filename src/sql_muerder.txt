@@ -1,15 +1,17 @@
+https://mystery.knightlab.com/
+
 20180115
 SQL City
 Security footage shows that there were 2 witnesses.
 The first witness lives at the last house on "Northwestern Dr".
 The second witness, named Annabel, lives somewhere on "Franklin Ave".
 
-the witness:
+**the witness:
 id	    name	        license_id	    address_number	address_street_name	ssn
 14887	Morty Schapiro	118009	        4919	        Northwestern Dr	    111564949
 16371	Annabel Miller	490173	        103	            Franklin Ave	    318771143
 
-interviews
+**interviews
 14887	I heard a gunshot and then saw a man run out. He had a "Get Fit Now Gym" bag.
         The membership number on the bag started with "48Z". Only gold members have those bags.
         The man got into a car with a plate that included "H42W".
@@ -17,19 +19,19 @@ interviews
 16371	I saw the murder happen, and I recognized the killer from my gym when
         I was working out last week on January the 9th.
 
-the clues
+*the clues
     plate that included "H42W"
     had a "Get Fit Now Gym" bag.
     number on the bag started with "48Z"
     gold member
     on January the 9th
 
-The car of the killer
+**The car of the killer
     id	age	height	eye_color	hair_color	gender	plate_number	car_make	car_model
 423327	30	70	    brown	    brown	    male	0H42W2	        Chevrolet	Spark LS
 664760	21	71	    black	    black	    male	4H42WR	        Nissan	    Altima
 
-person, sospechosos, y solo Jeremy va al gym
+**person, sospechosos, y solo Jeremy va al gym
 id	    name	        license_id	address_number	address_street_name	    ssn
 67318	Jeremy Bowers	423327	    530	            Washington Pl, Apt 3A	871539279
 51739	Tushar Chandra	664760	    312	            Phi St	                137882671
@@ -38,3 +40,36 @@ Get fit now member
 id	    person_id	name	        membership_start_date	membership_status
 48Z55	67318	    Jeremy Bowers	20160101	            gold
 
+**Testimonio de Jeremy
+    I was hired by a woman with a lot of money.
+    I don't know her name but I know she's around 5'5" (65") or 5'7" (67").
+    She has red hair and she drives a Tesla Model S.
+    I know that she attended the SQL Symphony Concert 3 times in December 2017.
+
+**Posible mente criminal, su licencia
+id	    age	height	eye_color	hair_color	gender	plate_number	car_make	car_model
+202298	68	66	    green	    red	        female	500123	        Tesla	    Model S
+291182	65	66	    blue	    red	        female	08CM64	        Tesla	    Model S
+918773	48	65	    black	    red	        female	917UU3	        Tesla	    Model S
+
+**person
+id	    name	            license_id	address_number	address_street_name	ssn
+78881	Red Korb	        918773	    107	            Camerata Dr	        961388910
+90700	Regina George	    291182	    332	            Maple Ave	        337169072
+99716	Miranda Priestly	202298	    1883	        Golden Ave	        987756388
+
+**Con la siguiente consulta solo salio esto
+SELECT *
+FROM facebook_event_checkin
+WHERE person_id IN (78881, 90700, 99716)
+
+person_id	event_id	event_name	            date
+99716	    1143	    SQL Symphony Concert	20171206
+99716	    1143	    SQL Symphony Concert	20171212
+99716	    1143	    SQL Symphony Concert	20171229
+
+*****La mente criminal que le pago a Jeremy, pelirroja y que asistio 3 veces al SQL Symphony Concert es: Miranda Priestly
+
+Congrats, you found the brains behind the murder!
+Everyone in SQL City hails you as the greatest SQL detective of all time.
+Time to break out the champagne!

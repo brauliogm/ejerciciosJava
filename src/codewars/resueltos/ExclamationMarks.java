@@ -1,4 +1,4 @@
-package codewars;
+package codewars.resueltos;
 
 public class ExclamationMarks {
     /*

@@ -1,47 +1,92 @@
-package codewars;
+package codewars.resueltos;
 
 public class StairsClimb {
     /*
-    Suzuki es un monje que sube una gran escalera hasta el monasterio como parte de un ritual. Algunos días sube más escaleras que otros dependiendo del número de alumnos que debe entrenar por la mañana. Tiene curiosidad por saber cuántas escaleras se podrían subir en los próximos 20 años y ha pasado un año anotando su progreso diario.
+    Suzuki es un monje que sube una gran escalera hasta el monasterio como parte de un ritual. Algunos días sube más escaleras que otros
+    dependiendo del número de alumnos que debe entrenar por la mañana. Tiene curiosidad por saber cuántas escaleras se podrían subir en los
+     próximos 20 años y ha pasado un año anotando su progreso diario.
 
     La suma de todas las escaleras registradas en un año se utilizará para estimar el número que podría subir en 20.
 
     Estimación_de_20_años = total_de_un_año * 20
 
-    Recibirá la siguiente estructura de datos que representa las escaleras que Suzuki registró en un año. Tendrá todos los datos de todo el año, por lo que, independientemente de cómo se registren, el problema debería ser sencillo de resolver.
+    Recibirá la siguiente estructura de datos que representa las escaleras que Suzuki registró en un año. Tendrá todos los datos de
+    todo el año, por lo que, independientemente de cómo se registren, el problema debería ser sencillo de resolver.
 
     stairs = [sunday,monday,tuesday,wednesday,thursday,friday,saturday]
     Asegúrese de que su solución tenga en cuenta todos los anidamientos dentro del conjunto de escaleras.
 
     Cada día de la semana en el conjunto de escaleras es un conjunto.
 
-    sunday = [6737, 7244, 5776, 9826, 7057, 9247, 5842, 5484, 6543, 5153, 6832, 8274, 7148, 6152, 5940, 8040, 9174, 7555, 7682, 5252, 8793, 8837, 7320, 8478, 6063, 5751, 9716, 5085, 7315, 7859, 6628, 5425, 6331, 7097, 6249, 8381, 5936, 8496, 6934, 8347, 7036, 6421, 6510, 5821, 8602, 5312, 7836, 8032, 9871, 5990, 6309, 7825]
+    sunday = [6737, 7244, 5776, 9826, 7057, 9247, 5842, 5484, 6543, 5153, 6832, 8274, 7148, 6152, 5940, 8040, 9174, 7555, 7682, 5252, 8793,
+    8837, 7320, 8478, 6063, 5751, 9716, 5085, 7315, 7859, 6628, 5425, 6331, 7097, 6249, 8381, 5936, 8496, 6934, 8347, 7036, 6421, 6510, 5821,
+    8602, 5312, 7836, 8032, 9871, 5990, 6309, 7825]
     Su función debería devolver la estimación de 20 años de las escaleras subidas utilizando la fórmula anterior.
     ---------------
-    Suzuki is a monk who climbs a large staircase to the monastery as part of a ritual. Some days he climbs more stairs than others depending on the number of students he must train in the morning. He is curious how many stairs might be climbed over the next 20 years and has spent a year marking down his daily progress.
+    Suzuki is a monk who climbs a large staircase to the monastery as part of a ritual. Some days he climbs more stairs than others depending on the
+     number of students he must train in the morning. He is curious how many stairs might be climbed over the next 20 years and has spent a year
+     marking down his daily progress.
 
     The sum of all the stairs logged in a year will be used for estimating the number he might climb in 20.
 
     20_year_estimate = one_year_total * 20
 
-    You will receive the following data structure representing the stairs Suzuki logged in a year. You will have all data for the entire year so regardless of how it is logged the problem should be simple to solve.
+    You will receive the following data structure representing the stairs Suzuki logged in a year. You will have all data for the entire year so
+     regardless of how it is logged the problem should be simple to solve.
 
     stairs = [sunday,monday,tuesday,wednesday,thursday,friday,saturday]
     Make sure your solution takes into account all of the nesting within the stairs array.
 
     Each weekday in the stairs array is an array.
 
-    sunday = [6737, 7244, 5776, 9826, 7057, 9247, 5842, 5484, 6543, 5153, 6832, 8274, 7148, 6152, 5940, 8040, 9174, 7555, 7682, 5252, 8793, 8837, 7320, 8478, 6063, 5751, 9716, 5085, 7315, 7859, 6628, 5425, 6331, 7097, 6249, 8381, 5936, 8496, 6934, 8347, 7036, 6421, 6510, 5821, 8602, 5312, 7836, 8032, 9871, 5990, 6309, 7825]
+    sunday = [6737, 7244, 5776, 9826, 7057, 9247, 5842, 5484, 6543, 5153, 6832, 8274, 7148, 6152, 5940, 8040, 9174, 7555, 7682, 5252, 8793, 8837,
+     7320, 8478, 6063, 5751, 9716, 5085, 7315, 7859, 6628, 5425, 6331, 7097, 6249, 8381, 5936, 8496, 6934, 8347, 7036, 6421, 6510, 5821, 8602,
+     5312, 7836, 8032, 9871, 5990, 6309, 7825]
     Your function should return the 20 year estimate of the stairs climbed using the formula above.
      */
 
-    public static long stairsIn20(int[][] stairs)
-    {
-        //code here
-        long num = 1;
-        return num;
+    public static void main(String[] args) {
+        int[] uno = {1,2,3};
+        int[] dos = {4,5};
+        int suma = 0;
+
+        int[][] num = {uno,dos};
+
+        System.out.println(stairsIn20(num));
     }
 
+    public static long stairsIn20(int[][] stairs)
+    {
+        long suma = 0;
+
+        for (int i = 0; i < stairs.length; i++) {
+            for (int j = 0; j < stairs[i].length; j++) {
+                suma += stairs[i][j];
+            }
+        }
+
+        long twentyYearsClimbing = suma*20;
+        return twentyYearsClimbing;
+    }
+//litones
+
+    /*
+    otras respuestas
+
+    int stairsInOne = 0;
+       for (int[] weekday : stairs) {
+         for (int day : weekday) {
+           stairsInOne += day;
+         }
+       }
+       return stairsInOne * 20;
+
+    ***************
+
+    return 20 * Arrays.stream(stairs).flatMapToInt(arr -> Arrays.stream(arr)).sum();
+
+
+     */
    public void stairsIn20_BasicTest1() {
         int[] sunday = {6737, 7244, 5776, 9826, 7057, 9247, 5842, 5484, 6543, 5153, 6832, 8274,
                 7148, 6152, 5940, 8040, 9174, 7555, 7682, 5252, 8793, 8837, 7320, 8478, 6063,
